@@ -45,7 +45,7 @@ var getSNPs = function () {
         //            }
         //        }
 
-        console.log(uniqArrayOfSNP.join("%20"));
+        //console.log(uniqArrayOfSNP.join("%20"));
     });
 
 }();
