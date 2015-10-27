@@ -4,7 +4,7 @@ var process = function () {
     var _env = {
         CLIENT_ID: 'e361afa06e36942902b04cb8c05e540d',
         CLIENT_SECRET: '4bc3ca7d6ccb84406fa0cad2dcd8c2fc',
-        REDIRECT_URI: 'http://localhost:3000/receive_code/'
+        REDIRECT_URI: 'https://symptoms-oxrgau-9941.herokuapp.com/receive_code/'
     }
     return {
         env: _env
