@@ -17,6 +17,8 @@
 
  var app = express();
 
+ var getSNPs = 'rs1057910%20rs1065852';
+
  app.configure(function () {
      app.set('views', __dirname + '/views');
      app.set('view engine', 'jade');
@@ -30,7 +32,7 @@
      }));
      app.use(app.router);
      app.use(express.static(path.join(__dirname, 'public')));
-     app.set('scope', 'rs1057910%20rs1065852%20genomes%20names');
+     app.set('scope', getSNPs + '%20genomes%20names');
  });
 
  // Import your cloud code (which configures the routes)
@@ -57,9 +59,8 @@
          headers: ParseHeaders.headers,
          json: true
      }, function (err, res, body) {
-         var type = typeof body;
-         console.log(type);
-         //console.log(body.results);
+         res.send(body);
+         console.log(body.results);
          //         var newArray = [];
          //
          //                  for (i = 0; i < body.results.length; i++) {
