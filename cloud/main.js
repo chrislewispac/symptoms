@@ -27,7 +27,7 @@ var getSNPs = function () {
         json: true
     }, function (e, r, body) {
         var body = JSON.stringify(body);
-        console.log(body.results.length);
+        console.log(body);
         //        var newArray = [];
         //
         //        for (i = 0; i < body.results.length; i++) {
