@@ -3,6 +3,7 @@
      express = require('express'),
      bodyParser = require('body-parser'),
      Parse = require('parse/node'),
+     routes = require('./routes'),
      ParseCloud = require('parse-cloud-express');
 
  var app = express();
