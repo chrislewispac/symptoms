@@ -26,7 +26,24 @@ var getSNPs = function () {
         headers: ParseHeaders.headers,
         json: true
     }, function (e, r, body) {
-        console.log(JSON.stringify(body));
+        var body = JSON.stringify(body);
+
+        var newArray = [];
+
+        for (i = 0; i < body.results.length; i++) {
+            newArray.push(body.results[i].rs);
+        }
+
+        var sorted_arr = newArray.sort();
+
+        var uniqArrayOfSNP = [];
+        for (var i = sorted_arr.length - 1; i >= 0; i--) {
+            if (sorted_arr[i - 1] !== sorted_arr[i]) {
+                uniqArrayOfSNP.push(sorted_arr[i]);
+            }
+        }
+
+        console.log(uniqArrayOfSNP.join("%20"));
     });
 
 }();
