@@ -59,8 +59,11 @@
          headers: ParseHeaders.headers,
          json: true
      }, function (err, res, body) {
-         //res.send(body);
-         //console.log(body);
+         if (!error && response.statusCode === 200) {
+             console.log(body.response);
+             //callback(items);
+         }
+
          //         var newArray = [];
          //
          //                  for (i = 0; i < body.results.length; i++) {
