@@ -10,6 +10,8 @@
 
  var app = express();
 
+ app.use(express.bodyParser());
+ app.use(express.methodOverride());
  app.use(express.cookieParser('oiybvoaryibvaoibryopypviunabrwpv893'));
  app.use(express.session({
      secret: 'oiybvoaryibvaoibryopypviunabrwpv893'
