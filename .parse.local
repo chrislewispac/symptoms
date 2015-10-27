@@ -1,0 +1,11 @@
+{
+  "applications": {
+    "_default": {
+      "link": "symptoms"
+    },
+    "symptoms": {
+      "parseAppId": "OXrgauxvwBSl8F0PZ5GolOS9a097JFk3gPpHckqg",
+      "herokuAppId": "22ec0e7f-8dab-4db9-9f3c-e2e1158b8832"
+    }
+  }
+}
