@@ -1,7 +1,7 @@
 var Parse = require('parse-cloud-express').Parse;
 var request = require('request');
 
-request('http://www.google.com', function (error, response, body) {
+request('http://jsonplaceholder.typicode.com/users', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body) // Show the HTML for the Google homepage.
     }
