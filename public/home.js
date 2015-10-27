@@ -21,25 +21,25 @@
         }
     }();
 
-    var user = new Parse.User();
-    user.set("username", "test");
-    user.set("password", "test");
-    user.set("email", "test@test.com");
-
-    // other fields can be set just like with Parse.Object
-    user.set("phone", "650-555-0000");
-
-    user.signUp(null, {
-        success: function (user) {
-            // Hooray! Let them use the app now.
-            console.log(user);
-        },
-        error: function (user, error) {
-            // Show the error message somewhere and let the user try again.
-            console.log(user);
-            console.log(error);
-        }
-    });
+//    var user = new Parse.User();
+//    user.set("username", "test");
+//    user.set("password", "test");
+//    user.set("email", "test@test.com");
+//
+//    // other fields can be set just like with Parse.Object
+//    user.set("phone", "650-555-0000");
+//
+//    user.signUp(null, {
+//        success: function (user) {
+//            // Hooray! Let them use the app now.
+//            console.log(user);
+//        },
+//        error: function (user, error) {
+//            // Show the error message somewhere and let the user try again.
+//            console.log(user);
+//            console.log(error);
+//        }
+//    });
 
     //console.log(appConfig.andMe);
 
