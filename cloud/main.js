@@ -27,25 +27,25 @@ var getSNPs = function () {
         json: true
     }, function (e, r, body) {
         var body = JSON.stringify(body);
-        console.log(body);
-        var newArray = [];
-
-        for (i = 0; i < body.results.length; i++) {
-            newArray.push(body.results[i].rs);
-        }
-
-        console.log(newArray);
-
-        //        var sorted_arr = newArray.sort();
+        console.log(body.results.length);
+        //        var newArray = [];
         //
-        //        var uniqArrayOfSNP = [];
-        //        for (var i = sorted_arr.length - 1; i >= 0; i--) {
-        //            if (sorted_arr[i - 1] !== sorted_arr[i]) {
-        //                uniqArrayOfSNP.push(sorted_arr[i]);
-        //            }
+        //        for (i = 0; i < body.results.length; i++) {
+        //            newArray.push(body.results[i].rs);
         //        }
-
-        //console.log(uniqArrayOfSNP.join("%20"));
+        //
+        //        console.log(newArray);
+        //
+        //        //        var sorted_arr = newArray.sort();
+        //        //
+        //        //        var uniqArrayOfSNP = [];
+        //        //        for (var i = sorted_arr.length - 1; i >= 0; i--) {
+        //        //            if (sorted_arr[i - 1] !== sorted_arr[i]) {
+        //        //                uniqArrayOfSNP.push(sorted_arr[i]);
+        //        //            }
+        //        //        }
+        //
+        //        //console.log(uniqArrayOfSNP.join("%20"));
     });
 
 }();
