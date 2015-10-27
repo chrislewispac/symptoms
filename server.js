@@ -16,15 +16,14 @@ app.use('/webhooks', ParseCloud.app);
 app.use(express.static(__dirname + '/public'));
 
 // Catch all unknown routes.
-app.all('/', function(request, response) {
-  response.status(404).send('Page not found.');
+app.all('/', function (request, response) {
+    response.render('index.html');
 });
 /*
  * Launch the HTTP server
  */
 var port = process.env.PORT || 5000;
 var server = http.createServer(app);
-server.listen(port, function() {
-  console.log('Cloud Code Webhooks server running on port ' + port + '.');
+server.listen(port, function () {
+    console.log('Cloud Code Webhooks server running on port ' + port + '.');
 });
-
