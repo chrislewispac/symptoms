@@ -11,7 +11,9 @@ var process = function () {
     };
 }();
 
-//console.log(getSNPs);
+
+var getSNPs = app.get('scope');
+console.log(getSNPs);
 
 exports.index = function (req, res, scope) {
     if (req.signedCookies.access_token) {
