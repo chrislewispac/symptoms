@@ -53,9 +53,7 @@ app.get('/', function (req, res) {
     });
 });
 
-if (!module.parent) {
-    app.listen(process.env.PORT || 3000, function () {
-        console.log('up and running');
-    });
-}
-}
+
+app.listen(process.env.PORT || 3000, function () {
+    console.log('up and running');
+});
