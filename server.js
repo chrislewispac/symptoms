@@ -56,8 +56,10 @@
          url: 'https://api.parse.com/1/classes/snps',
          headers: ParseHeaders.headers,
          json: true
-     }, function (e, r, body) {
-         console.log(r);
+     }, function (err, res, body) {
+         var reqBody = res.request.body.toString();
+         reqBody = JSON.parse(reqBody);
+         console.log(reqBody.results.length);
          //         var newArray = [];
          //
          //                  for (i = 0; i < body.results.length; i++) {
