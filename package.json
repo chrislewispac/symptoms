@@ -16,7 +16,8 @@
         "multer": "~0.1.8",
         "jsonfile": "~2.2.3",
         "jade": "*",
-        "request": "*"
+        "request": "*",
+        "method-override": "*",
     },
     "engines": {
         "node": "0.12.2"
