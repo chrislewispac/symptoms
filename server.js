@@ -59,7 +59,7 @@
          headers: ParseHeaders.headers,
          json: true
      }, function (err, res, body) {
-         if (!error && response.statusCode === 200) {
+         if (!err && res.statusCode === 200) {
              console.log(body.response);
              //callback(items);
          }
