@@ -20,14 +20,13 @@
 
  app.get('/', function (req, res) {
      res.render('home', {
-         sayHelloTo: 'world'
+         sayHelloTo: 'chris'
      });
  });
 
-
  //Catch all unknown routes.
  app.all('/', function (request, response) {
-     response.status(404).send('We gettin there.');
+     response.status(404).send('not found.');
  });
 
  /*
