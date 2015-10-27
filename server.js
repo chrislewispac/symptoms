@@ -2,13 +2,13 @@
 var http = require('http'),
     express = require('express'),
     bodyParser = require('body-parser'),
-    Parse = require('parse/node'),
-    ParseCloud = require('parse-cloud-express');
+    //Parse = require('parse/node'),
+    //ParseCloud = require('parse-cloud-express');
 
-var app = express();
+    var app = express();
 
 // Import your cloud code (which configures the routes)
-require('./cloud/main.js');
+//require('./cloud/main.js');
 // Mount the webhooks app to a specific path (must match what is used in scripts/register-webhooks.js)
 app.use('/webhooks', ParseCloud.app);
 
