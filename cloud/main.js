@@ -2,56 +2,6 @@ var Parse = require('parse-cloud-express').Parse;
 var request = require('request');
 
 
-//request.get('https://api.parse.com/1/classes/snps', function (error, response, body) {
-//    if (!error && response.statusCode == 200) {
-//        console.log(body) // Show the HTML for the Google homepage.
-//    }
-//})
-
-var getSNPs = function () {
-
-    var ParseHeaders = function () {
-        var _headers = {
-            'x-parse-rest-api-key': 'gD7j2a8ifsrqiusHIDTiD3j7nMfZ1TTwqwVAHjty',
-            'x-parse-application-id': 'OXrgauxvwBSl8F0PZ5GolOS9a097JFk3gPpHckqg',
-        };
-
-        return {
-            headers: _headers
-        }
-    }();
-
-    request.get({
-        url: 'https://api.parse.com/1/classes/snps',
-        headers: ParseHeaders.headers,
-        json: true
-    }, function (e, r, body) {
-        var body = JSON.stringify(body);
-        console.log(body);
-        //        var newArray = [];
-        //
-        //        for (i = 0; i < body.results.length; i++) {
-        //            newArray.push(body.results[i].rs);
-        //        }
-        //
-        //        console.log(newArray);
-        //
-        //        //        var sorted_arr = newArray.sort();
-        //        //
-        //        //        var uniqArrayOfSNP = [];
-        //        //        for (var i = sorted_arr.length - 1; i >= 0; i--) {
-        //        //            if (sorted_arr[i - 1] !== sorted_arr[i]) {
-        //        //                uniqArrayOfSNP.push(sorted_arr[i]);
-        //        //            }
-        //        //        }
-        //
-        //        //console.log(uniqArrayOfSNP.join("%20"));
-    });
-
-}();
-
-
-
 Parse.Cloud.define("hello", function (request, response) {
     console.log('Ran cloud function.');
     // As with Parse-hosted Cloud Code, the user is available at: request.user

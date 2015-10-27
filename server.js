@@ -4,7 +4,8 @@
      path = require('path'),
      routes = require('./routes'),
      Parse = require('parse/node'),
-     ParseCloud = require('parse-cloud-express');
+     ParseCloud = require('parse-cloud-express'),
+     request = require('request');
 
  var app = express();
 
@@ -38,11 +39,47 @@
  // Mount the webhooks app to a specific path (must match what is used in scripts/register-webhooks.js)
  app.use('/webhooks', ParseCloud.app);
 
- // app.get('/', function (req, res) {
- //     res.render('home', {
- //         sayHelloTo: 'chris'
- //     });
- // });
+ var getSNPs = function () {
+
+     var ParseHeaders = function () {
+         var _headers = {
+             'x-parse-rest-api-key': 'gD7j2a8ifsrqiusHIDTiD3j7nMfZ1TTwqwVAHjty',
+             'x-parse-application-id': 'OXrgauxvwBSl8F0PZ5GolOS9a097JFk3gPpHckqg',
+         };
+
+         return {
+             headers: _headers
+         }
+     }();
+
+     request.get({
+         url: 'https://api.parse.com/1/classes/snps',
+         headers: ParseHeaders.headers,
+         json: true
+     }, function (e, r, body) {
+         var body = JSON.stringify(body);
+         console.log(body);
+         var newArray = [];
+
+         for (i = 0; i < body.results.length; i++) {
+             newArray.push(body.results[i].rs);
+         }
+
+         console.log(newArray);
+
+         var sorted_arr = newArray.sort();
+
+         var uniqArrayOfSNP = [];
+         for (var i = sorted_arr.length - 1; i >= 0; i--) {
+             if (sorted_arr[i - 1] !== sorted_arr[i]) {
+                 uniqArrayOfSNP.push(sorted_arr[i]);
+             }
+         }
+
+         console.log(uniqArrayOfSNP.join("%20"));
+     });
+
+ }();
 
  app.get('/', function (res, req) {
      routes.index(res, req, app.get('scope'));
