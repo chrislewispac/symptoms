@@ -16,7 +16,7 @@ app.use('/webhooks', ParseCloud.app);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/test', function (request, response) {
-    response.render('test.html');
+    response.render('test');
 });
 
 // Catch all unknown routes.
