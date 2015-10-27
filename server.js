@@ -20,7 +20,7 @@
  app.set('view engine', 'jade');
 
 
- Catch all unknown routes.
+ //Catch all unknown routes.
  app.all('/', function (request, response) {
      response.status(404).send('We gettin there.');
  });
