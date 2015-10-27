@@ -9,14 +9,6 @@
 
  var app = express();
 
-
- var express = require('express'),
-     routes = require('./routes'),
-     http = require('http'),
-     path = require('path');
-
- var app = express();
-
  //rs1057910%20rs1065852
 
  var getSNPs = '';

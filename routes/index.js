@@ -11,10 +11,6 @@ var process = function () {
     };
 }();
 
-
-var getSNPs = app.get('scope');
-console.log(getSNPs);
-
 exports.index = function (req, res, scope) {
     if (req.signedCookies.access_token) {
         var names, names_by_id = {},
