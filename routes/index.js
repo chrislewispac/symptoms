@@ -39,7 +39,7 @@ exports.index = function (req, res, scope, SNPs) {
                     json: true
                 }, function (e, r, body) {
                     genotypes = body;
-                    //console.log(body);
+                    console.log(body);
                     //console.log(r);
                     //console.log(e);
                     res.render('result', {
