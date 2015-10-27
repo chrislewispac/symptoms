@@ -15,15 +15,18 @@ app.use('/webhooks', ParseCloud.app);
 // Host static files from public/
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
+app.set('views', __dirname + '/public');
+app.set('view engine', 'jade');
 
+app.get('/', function (request, response) {
+    response.render('public/test');
+});
 
 // Catch all unknown routes.
 //app.all('/', function (request, response) {
 //    response.status(404).send('We gettin there.');
 //});
+
 /*
  * Launch the HTTP server
  */
