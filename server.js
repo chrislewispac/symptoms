@@ -34,7 +34,7 @@
      }));
      app.use(app.router);
      app.use(express.static(path.join(__dirname, 'public')));
-     app.set('scope', getSNPs + '%20genomes%20names');
+     //app.set('scope', getSNPs + '%20genomes%20names');
  });
 
  // Import your cloud code (which configures the routes)
@@ -58,14 +58,14 @@
 
      function formatQueryString(body) {
 
-         console.log(body.results.length);
+         //console.log(body.results.length);
          var newArray = [];
 
          for (i = 0; i < body.results.length; i++) {
              newArray.push(body.results[i].rs);
          }
 
-         console.log(newArray);
+         //console.log(newArray);
 
          var sorted_arr = newArray.sort();
 
@@ -77,6 +77,7 @@
          }
 
          getSNPs = uniqArrayOfSNP.join("%20");
+         app.set('scope', getSNPs + '%20genomes%20names');
      };
 
      request.get({
@@ -85,7 +86,6 @@
          json: true
      }, function (err, res, body) {
          if (!err && res.statusCode === 200) {
-             //console.log(body);
              formatQueryString(body);
          }
      });
