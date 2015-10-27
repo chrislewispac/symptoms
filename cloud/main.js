@@ -12,7 +12,7 @@ var options = {
     method: 'GET',
     url: 'https://api.parse.com/1/classes/snps',
     headers: {
-        'postman-token': '8d222bc4-8d0c-ef32-9a49-832c8f5a58c2',
+        'postman-token': 'a69448a5-82ba-1be8-91a7-476f33c4e9df',
         'cache-control': 'no-cache',
         'x-parse-rest-api-key': 'gD7j2a8ifsrqiusHIDTiD3j7nMfZ1TTwqwVAHjty',
         'x-parse-application-id': 'OXrgauxvwBSl8F0PZ5GolOS9a097JFk3gPpHckqg',
