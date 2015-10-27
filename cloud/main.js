@@ -23,11 +23,11 @@ var options = {
     }
 };
 
-//request(options, function (error, response, body) {
-//    if (error) throw new Error(error);
-//
-//    console.log(body);
-//});
+request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+
+    console.log(body);
+});
 
 Parse.Cloud.define("hello", function (request, response) {
     console.log('Ran cloud function.');
