@@ -4,3 +4,6 @@ block content
     h1 Your results
     each genotype, i in genotypes
         p <b>#{names[genotype.id]}</b> has genotype <b>#{genotype}</b>
+        div
+          - console.log(genotype)
+        div
