@@ -56,7 +56,7 @@
 
      function callback(body) {
 
-         console.log(body);
+         console.log(body.results.length);
 
      };
 
