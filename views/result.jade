@@ -3,4 +3,4 @@ extends layout
 block content
     h1 Your results
     each genotype, i in genotypes
-        p <b>#{names[genotype.id]}</b> has genotype <b>#{genotype[i]}</b>
+        p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>
