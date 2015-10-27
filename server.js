@@ -9,10 +9,6 @@
 
  var app = express();
 
- //rs1057910%20rs1065852
-
- var getSNPs = '';
-
  app.configure(function () {
      app.set('views', __dirname + '/views');
      app.set('view engine', 'jade');
@@ -35,6 +31,7 @@
  // Mount the webhooks app to a specific path (must match what is used in scripts/register-webhooks.js)
  app.use('/webhooks', ParseCloud.app);
 
+ var SNPs = '';
  var getSNPs = function () {
 
      var ParseHeaders = function () {
@@ -68,8 +65,9 @@
              }
          }
 
-         getSNPs = uniqArrayOfSNP.join("%20");
-         app.set('scope', getSNPs + '%20genomes%20names');
+         SNPs = uniqArrayOfSNP.join("%20");
+         app.set('SNPs', SNPs);
+         app.set('scope', SNPs + '%20genomes%20names');
      };
 
      request.get({
@@ -84,10 +82,10 @@
  }();
 
  app.get('/', function (res, req) {
-     routes.index(res, req, app.get('scope'));
+     routes.index(res, req, app.get('scope'), app.get('SNPs'));
  });
  app.get('/receive_code/', function (res, req) {
-     routes.receive_code(res, req, app.get('scope'));
+     routes.receive_code(res, req, app.get('scope'), app.get('SNPs'));
  });
 
  //Catch all unknown routes.

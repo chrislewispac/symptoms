@@ -11,7 +11,8 @@ var process = function () {
     };
 }();
 
-exports.index = function (req, res, scope) {
+exports.index = function (req, res, scope, SNPs) {
+
     if (req.signedCookies.access_token) {
         var names, names_by_id = {},
             genotypes;
@@ -33,7 +34,7 @@ exports.index = function (req, res, scope) {
                     names_by_id[names.profiles[i].id] = names.profiles[i].first_name + ' ' + names.profiles[i].last_name;
                 }
                 request.get({
-                    url: base_uri + '/genotypes/?locations=rs1057910%20rs1065852',
+                    url: base_uri + '/genotypes/?locations=' + SNPs,
                     headers: headers,
                     json: true
                 }, function (e, r, body) {
@@ -57,7 +58,7 @@ exports.index = function (req, res, scope) {
     }
 };
 
-exports.receive_code = function (req, res, scope) {
+exports.receive_code = function (req, res, scope, SNPs) {
     if (!req.query.code) {
         res.render('error', {
             client_id: process.env.CLIENT_ID,
