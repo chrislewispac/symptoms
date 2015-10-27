@@ -2,11 +2,20 @@
  var http = require('http'),
      express = require('express'),
      bodyParser = require('body-parser'),
+     methodOverride = require('method-override'),
+     path = require('path'),
      Parse = require('parse/node'),
      routes = require('./routes'),
      ParseCloud = require('parse-cloud-express');
 
  var app = express();
+
+ app.use(express.cookieParser('oiybvoaryibvaoibryopypviunabrwpv893'));
+ app.use(express.session({
+     secret: 'oiybvoaryibvaoibryopypviunabrwpv893'
+ }));
+ app.set('scope', 'rs1057910%20genomes%20names');
+
 
  // Import your cloud code (which configures the routes)
  require('./cloud/main.js');
