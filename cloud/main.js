@@ -26,7 +26,7 @@ var getSNPs = function () {
         headers: ParseHeaders.headers,
         json: true
     }, function (e, r, body) {
-        console.log(body);
+        console.log(JSON.stringify(body));
     });
 
 }();
