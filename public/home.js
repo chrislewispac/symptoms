@@ -1,8 +1,6 @@
 (function appModule($) {
 
 
-
-
     //SET GLOBAL CONFIGURATIONS IN IIFE
     var appConfig = function () {
 
@@ -23,39 +21,41 @@
         }
     }();
 
-        var user = new Parse.User();
-        user.set("username", "test");
-        user.set("password", "test");
-        user.set("email", "test@test.com");
+    var user = new Parse.User();
+    user.set("username", "test");
+    user.set("password", "test");
+    user.set("email", "test@test.com");
 
-        // other fields can be set just like with Parse.Object
-        user.set("phone", "650-555-0000");
+    // other fields can be set just like with Parse.Object
+    user.set("phone", "650-555-0000");
 
-        user.signUp(null, {
-            success: function (user) {
-                // Hooray! Let them use the app now.
-                console.log(user);
-            },
-            error: function (user, error) {
-                // Show the error message somewhere and let the user try again.
-                console.log(user);
-                console.log(error);
-            }
-        });
+    user.signUp(null, {
+        success: function (user) {
+            // Hooray! Let them use the app now.
+            console.log(user);
+        },
+        error: function (user, error) {
+            // Show the error message somewhere and let the user try again.
+            console.log(user);
+            console.log(error);
+        }
+    });
 
     //console.log(appConfig.andMe);
 
     //RUNS WHEN DOM READY
     $(function uiComponents() {
 
-//        //INSTANTIATE GLOBAL 23&me VARIABLE WITH CLIENT_ID
-//        var ttam = TTAM(appConfig.andMe.client_id);
-//
-//        //APPLY CONNECT BUTTON TO DOM BUTTON 'WRAPPER'
-//        ttam.connectButton('wrapper', ["basic", "rs1234"]);
+        console.log('running');
+
+        //        //INSTANTIATE GLOBAL 23&me VARIABLE WITH CLIENT_ID
+        //        var ttam = TTAM(appConfig.andMe.client_id);
+        //
+        //        //APPLY CONNECT BUTTON TO DOM BUTTON 'WRAPPER'
+        //        ttam.connectButton('wrapper', ["basic", "rs1234"]);
 
         // INITIATE ACCORDION MODULE
-//        $('.ui.accordion').accordion();
+        //        $('.ui.accordion').accordion();
     });
 
 })(jQuery)
