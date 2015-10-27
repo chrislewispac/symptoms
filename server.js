@@ -39,9 +39,9 @@
  app.get('/', function (res, req) {
      routes.index(res, req, app.get('scope'));
  });
- app.get('/receive_code/', function (res, req) {
-     routes.receive_code(res, req, app.get('scope'));
- });
+ // app.get('/receive_code/', function (res, req) {
+ //     routes.receive_code(res, req, app.get('scope'));
+ // });
 
  //Catch all unknown routes.
  app.all('/', function (request, response) {
