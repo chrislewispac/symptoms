@@ -29,7 +29,7 @@
      }));
      app.use(app.router);
      app.use(express.static(path.join(__dirname, 'public')));
-     app.set('scope', 'rs1057910%20genomes%20names');
+     app.set('scope', 'rs1057910%20rs1065852%20genomes%20names');
  });
 
  // Import your cloud code (which configures the routes)

@@ -35,9 +35,9 @@ exports.index = function (req, res, scope) {
                     names_by_id[names.profiles[i].id] = names.profiles[i].first_name + ' ' + names.profiles[i].last_name;
                 }
                 request.get({
-                    url: base_uri + '/genotypes/?locations=rs1057910',
+                    url: base_uri + '/genotypes/?locations=rs1057910%20rs1065852',
                     headers: headers,
-    json: true
+                    json: true
                 }, function (e, r, body) {
                     genotypes = body;
                     console.log(body);
