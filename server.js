@@ -16,14 +16,18 @@
  // Host static files from public/
  app.use(express.static(__dirname + '/public'));
 
- app.set('views', __dirname + '/public');
+ app.set('views', __dirname + '/views');
  app.set('view engine', 'jade');
 
+ app.get('/'function (req, res) {
+     res.render('test');
+
+ });
 
  //Catch all unknown routes.
- app.all('/', function (request, response) {
-     response.status(404).send('We gettin there.');
- });
+// app.all('/', function (request, response) {
+//     response.status(404).send('We gettin there.');
+// });
 
  /*
   * Launch the HTTP server
