@@ -8,17 +8,30 @@ var request = require('request');
 //    }
 //})
 
+var getSNPs = function () {
 
-request.get({
-    url: 'https://api.parse.com/1/classes/snps',
-    headers: {
-        'x-parse-rest-api-key': 'gD7j2a8ifsrqiusHIDTiD3j7nMfZ1TTwqwVAHjty',
-        'x-parse-application-id': 'OXrgauxvwBSl8F0PZ5GolOS9a097JFk3gPpHckqg',
-    },
-    json: true
-}, function (e, r, body) {
-    console.log(body);
-});
+    var ParseHeaders = function () {
+        var _headers = {
+            'x-parse-rest-api-key': 'gD7j2a8ifsrqiusHIDTiD3j7nMfZ1TTwqwVAHjty',
+            'x-parse-application-id': 'OXrgauxvwBSl8F0PZ5GolOS9a097JFk3gPpHckqg',
+        };
+
+        return {
+            headers: _headers
+        }
+    }();
+
+    request.get({
+        url: 'https://api.parse.com/1/classes/snps',
+        headers: ParseHeaders.headers,
+        json: true
+    }, function (e, r, body) {
+        console.log(body);
+    });
+
+}();
+
+
 
 Parse.Cloud.define("hello", function (request, response) {
     console.log('Ran cloud function.');
