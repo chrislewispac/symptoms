@@ -57,7 +57,7 @@
          headers: ParseHeaders.headers,
          json: true
      }, function (err, res, body) {
-         var reqBody = res.request.body.toString();
+         var reqBody = res.body.toString();
          reqBody = JSON.parse(reqBody);
          console.log(reqBody.results.length);
          //         var newArray = [];
