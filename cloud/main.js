@@ -8,24 +8,15 @@ var request = require('request');
 //    }
 //})
 
-var options = {
-    method: 'GET',
+
+request.get({
     url: 'https://api.parse.com/1/classes/snps',
     headers: {
-        'postman-token': 'a69448a5-82ba-1be8-91a7-476f33c4e9df',
-        'cache-control': 'no-cache',
         'x-parse-rest-api-key': 'gD7j2a8ifsrqiusHIDTiD3j7nMfZ1TTwqwVAHjty',
         'x-parse-application-id': 'OXrgauxvwBSl8F0PZ5GolOS9a097JFk3gPpHckqg',
-        'content-type': 'multipart/form-data; boundary=---011000010111000001101001'
     },
-    formData: {
-        _: null
-    }
-};
-
-request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
+    json: true
+}, function (e, r, body) {
     console.log(body);
 });
 
