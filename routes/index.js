@@ -37,7 +37,7 @@ exports.index = function (req, res, scope) {
                 request.get({
                     url: base_uri + '/genotypes/?locations=rs1057910',
                     headers: headers,
-                    json: true
+    json: true
                 }, function (e, r, body) {
                     genotypes = body;
                     console.log(body);

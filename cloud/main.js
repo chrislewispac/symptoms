@@ -1,7 +1,7 @@
 var Parse = require('parse-cloud-express').Parse;
 var request = require('request');
 
-request('http://jsonplaceholder.typicode.com/users', function (error, response, body) {
+request('https://api.parse.com/1/classes/snps', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body) // Show the HTML for the Google homepage.
     }
