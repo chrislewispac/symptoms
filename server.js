@@ -54,14 +54,20 @@
          }
      }();
 
+     function callback(body) {
+
+         console.log(body);
+
+     };
+
      request.get({
          url: 'https://api.parse.com/1/classes/snps',
          headers: ParseHeaders.headers,
          json: true
      }, function (err, res, body) {
          if (!err && res.statusCode === 200) {
-             console.log(body.response);
-             //callback(items);
+             //console.log(body);
+             callback(body);
          }
 
          //         var newArray = [];
