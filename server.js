@@ -17,7 +17,9 @@
 
  var app = express();
 
- var getSNPs = 'rs1057910%20rs1065852';
+ //rs1057910%20rs1065852
+
+ var getSNPs = '';
 
  app.configure(function () {
      app.set('views', __dirname + '/views');
@@ -54,27 +56,27 @@
          }
      }();
 
-     function callback(body) {
+     function formatQueryString(body) {
 
          console.log(body.results.length);
-                  var newArray = [];
+         var newArray = [];
 
-                  for (i = 0; i < body.results.length; i++) {
-                      newArray.push(body.results[i].rs);
-                  }
+         for (i = 0; i < body.results.length; i++) {
+             newArray.push(body.results[i].rs);
+         }
 
-                  console.log(newArray);
+         console.log(newArray);
 
-                  var sorted_arr = newArray.sort();
+         var sorted_arr = newArray.sort();
 
-                  var uniqArrayOfSNP = [];
-                  for (var i = sorted_arr.length - 1; i >= 0; i--) {
-                      if (sorted_arr[i - 1] !== sorted_arr[i]) {
-                          uniqArrayOfSNP.push(sorted_arr[i]);
-                      }
-                  }
+         var uniqArrayOfSNP = [];
+         for (var i = sorted_arr.length - 1; i >= 0; i--) {
+             if (sorted_arr[i - 1] !== sorted_arr[i]) {
+                 uniqArrayOfSNP.push(sorted_arr[i]);
+             }
+         }
 
-                  console.log(uniqArrayOfSNP.join("%20"));
+         getSNPs = uniqArrayOfSNP.join("%20");
      };
 
      request.get({
@@ -84,7 +86,7 @@
      }, function (err, res, body) {
          if (!err && res.statusCode === 200) {
              //console.log(body);
-             callback(body);
+             formatQueryString(body);
          }
      });
  }();
