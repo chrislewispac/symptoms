@@ -57,7 +57,8 @@
          headers: ParseHeaders.headers,
          json: true
      }, function (err, res, body) {
-         console.log(body);
+         var type = typeof body;
+         console.log(type);
          //console.log(body.results);
          //         var newArray = [];
          //
