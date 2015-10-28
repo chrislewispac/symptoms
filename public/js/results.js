@@ -24,8 +24,9 @@
     $(function uiComponents() {
 
         console.log('running');
-        //console.log(genotypes);
-        //console.log(parseData);
+        console.log(uniqArrayOfSNPs);
+        console.log(genotypes);
+        console.log(parseData);
 
         //INITIATE ACCORDION MODULE
         $('.ui.accordion').accordion();
