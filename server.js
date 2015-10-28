@@ -22,13 +22,12 @@
      }));
      app.use(app.router);
      app.use(express.static(path.join(__dirname, 'public')));
-     //app.set('scope', getSNPs + '%20genomes%20names');
  });
 
  // Import your cloud code (which configures the routes)
  require('./cloud/main.js');
 
- // Mount the webhooks app to a specific path (must match what is used in scripts/register-webhooks.js)
+ // Mount the webhooks app to a specific path (used in scripts/register-webhooks.js)
  app.use('/webhooks', ParseCloud.app);
 
  var parseData = {};
@@ -48,14 +47,11 @@
 
      function formatQueryString(body) {
 
-         //console.log(body.results.length);
          var newArray = [];
 
          for (i = 0; i < body.results.length; i++) {
              newArray.push(body.results[i].rs);
          }
-
-         //console.log(newArray);
 
          var sorted_arr = newArray.sort();
 
