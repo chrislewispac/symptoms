@@ -11,7 +11,7 @@ var process = function () {
     };
 }();
 
-exports.index = function (req, res, scope, SNPs, parseData) {
+exports.index = function (req, res, scope, SNPs, parseData, uniqArrayOfSNPs) {
 
     if (req.signedCookies.access_token) {
         var names, names_by_id = {},
@@ -43,6 +43,7 @@ exports.index = function (req, res, scope, SNPs, parseData) {
                         names: names_by_id,
                         genotypes: genotypes,
                         parseData: parseData,
+                        uniqArrayOfSNPs: uniqArrayOfSNPs,
                     });
                 });
             }
