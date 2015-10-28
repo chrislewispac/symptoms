@@ -26,11 +26,11 @@ block content
                         
                             each genotype in genotypes
                                 each snp, rs in genotype
-                                    if rs == '!{val.rs}'
-                                    p.transition.hidden
-                                        | !{rs} !{snp} !{val.rs}
+                                    if '!{rs}' == '!{val.rs}'
+                                        p.transition.hidden
+                                            | !{rs} !{snp} !{val.rs}
 
-                                    a.pubmed Pubmed Link  
+                                        a.pubmed Pubmed Link  
                 
     ul
     ul
