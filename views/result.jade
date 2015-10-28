@@ -29,11 +29,11 @@ block content
                                     if rs == val.rs
                                         if snp == val.snp
                                             p.transition.hidden
-                                                | Holy cow, its a match!
-                                        p.transition.hidden
-                                            | !{rs} !{snp} !{val.rs} !{val.snp}
-
-                                            a.pubmed Pubmed Link  
+                                                | !{val.text_to_display}
+                                                a.pubmed Pubmed Link  
+                                        else        
+                                            p.transition.hidden
+                                                | Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}  
                 
     ul
     ul
