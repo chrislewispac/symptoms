@@ -89,6 +89,7 @@
  app.get('/', function (res, req) {
      routes.index(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'));
  });
+
  app.get('/receive_code/', function (res, req) {
      routes.receive_code(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'));
  });
