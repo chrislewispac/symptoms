@@ -25,7 +25,7 @@
 
         console.log('running');
 
-        INITIATE ACCORDION MODULE
+        //INITIATE ACCORDION MODULE
         $('.ui.accordion').accordion();
     });
 
