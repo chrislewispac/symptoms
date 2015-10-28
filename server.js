@@ -61,15 +61,16 @@
 
          var sorted_arr = newArray.sort();
 
-         var uniqArrayOfSNP = [];
+         var uniqArrayOfSNPs = [];
          for (var i = sorted_arr.length - 1; i >= 0; i--) {
              if (sorted_arr[i - 1] !== sorted_arr[i]) {
-                 uniqArrayOfSNP.push(sorted_arr[i]);
+                 uniqArrayOfSNPs.push(sorted_arr[i]);
              }
          }
 
          parseData = body.results;
          SNPs = uniqArrayOfSNP.join("%20");
+         app.set('uniqArrayOfSNPs', uniqArrayOfSNPs)
          app.set('parseData', parseData);
          app.set('SNPs', SNPs);
          app.set('scope', SNPs + '%20genomes%20names');
@@ -87,11 +88,11 @@
  }();
 
  app.get('/', function (res, req) {
-     routes.index(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'));
+     routes.index(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'), app.get('uniqArrayOfSNPs'));
  });
 
  app.get('/receive_code/', function (res, req) {
-     routes.receive_code(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'));
+     routes.receive_code(res, req, app.get('scope'), app.get('SNPs'));
  });
 
  //Catch all unknown routes.
