@@ -45,10 +45,3 @@
 //         }
 //     });
 // }();
-//
-// module.exports = function (injectedVariable) {
-//     return {
-//         somePublicMethod: function () {},
-//         anotherPublicMethod: function () {},
-//     };
-// };
