@@ -28,8 +28,10 @@ block content
                                 each snp, rs in genotype
                                     if rs == 'rs4244285'
                                         p.transition.hidden
-                                            | !{rs} !{snp} !{val.rs}
-
+                                            | Matched!
+                                    p.transition.hidden
+                                        | !{rs} !{snp} !{val.rs}
+                                        
                                         a.pubmed Pubmed Link  
                 
     ul
