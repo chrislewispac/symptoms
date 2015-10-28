@@ -9,7 +9,6 @@
      request = require('request');
 
  var app = express();
- app = expose(app);
 
 
  app.configure(function () {
@@ -70,6 +69,7 @@
          app.set('parseData', parseData);
          app.set('SNPs', SNPs);
          app.set('scope', SNPs + '%20genomes%20names');
+         app.expose(app.settings);
      };
 
      request.get({
@@ -84,7 +84,6 @@
  }();
 
  app.get('/', function (res, req) {
-     app.expose(app.settings);
      routes.index(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'));
  });
  app.get('/receive_code/', function (res, req) {
