@@ -39,8 +39,11 @@ block content
                 a.pubmed Pubmed Link   
                 
     ul
-      each val, index in parseData
-        li= index + ': ' + val            
+    ul
+      each val in parseData
+        li= val
+        each obj, index in val
+            li= index + ': ' + obj            
                 
                 
                 
