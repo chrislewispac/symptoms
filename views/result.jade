@@ -34,5 +34,3 @@ block content
                                         else        
                                             p.transition.hidden
                                                 | #{names[genotype.id]}: Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}
-                                                each id in val.pubmed_ids    
-                                                    a.pubmed(href="http://www.ncbi.nlm.nih.gov/pubmed/" + id) Pubmed Link
