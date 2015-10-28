@@ -1,9 +1,13 @@
 extends layout
 
-block content
-    script(type='text/javascript').
-        var genotype =!{JSON.stringify(genotype)}
-        
+script.
+  genotypes="!{JSON.stringify(genotypes)}";
+  parseData="!{JSON.stringify(parseData)}" 
+
+block append head
+    script(src='js/results.js')
+
+block content        
     h1 Your results
     each genotype, i in genotypes
         p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>

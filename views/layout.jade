@@ -2,19 +2,17 @@ doctype html
 html
     head
         title Test
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        link(rel='stylesheet', href='semantic/dist/semantic.min.css')
-        link(rel='stylesheet', href='semantic/dist/components/accordion.css')
-    
-        //I'm loading js here but it should be moved to bottom for speed in production
-        
-        script(src='https://code.jquery.com/jquery-1.11.3.min.js')
-        script(src='//www.parsecdn.com/js/parse-1.6.7.min.js')
-        script(src='semantic/dist/semantic.min.js')
-        script(src='semantic/dist/components/accordion.min.js')
+        block head
+            link(rel='stylesheet', href='/stylesheets/style.css')
+            link(rel='stylesheet', href='semantic/dist/semantic.min.css')
+            link(rel='stylesheet', href='semantic/dist/components/accordion.css')
 
-        //custom JS
-        script(src='home.js')
+            //I'm loading js here but it should be moved to bottom for speed in production
+
+            script(src='https://code.jquery.com/jquery-1.11.3.min.js')
+            script(src='//www.parsecdn.com/js/parse-1.6.7.min.js')
+            script(src='semantic/dist/semantic.min.js')
+            script(src='semantic/dist/components/accordion.min.js')
         
     body
         .container

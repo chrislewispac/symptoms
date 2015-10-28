@@ -1,4 +1,4 @@
-(function appModule($) {
+(function resultsModule($) {
 
     //SET GLOBAL CONFIGURATIONS IN IIFE
     var appConfig = function () {
@@ -24,12 +24,12 @@
     $(function uiComponents() {
 
         console.log('running');
+        console.log(genotypes);
+        console.log(parseData);
 
         //INITIATE ACCORDION MODULE
         $('.ui.accordion').accordion();
 
-
-        console.log(genotype);
     });
 
 })(jQuery)
