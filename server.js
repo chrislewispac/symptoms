@@ -81,6 +81,8 @@
      });
  }();
 
+ app.expose(app.settings);
+
  app.get('/', function (res, req) {
      routes.index(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'));
  });
