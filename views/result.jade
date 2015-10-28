@@ -29,7 +29,9 @@ block content
                                         if snp == val.snp
                                             p.transition.hidden
                                                 | #{names[genotype.id]}: !{val.text_to_display}
-                                                a.pubmed(href="http://www.ncbi.nlm.nih.gov/pubmed/25096692") Pubmed Link  
+                                                each id in val.pubmed_ids
+                                                a.pubmed(href="http://www.ncbi.nlm.nih.gov/pubmed/!{id}") Pubmed Link  
                                         else        
                                             p.transition.hidden
-                                                | #{names[genotype.id]}: Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}  
+                                                | #{names[genotype.id]}: Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}
+                                                a.pubmed(href="http://www.ncbi.nlm.nih.gov/pubmed/!{id}") Pubmed Link
