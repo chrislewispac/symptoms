@@ -24,7 +24,7 @@
     $(function uiComponents() {
 
         console.log('running');
-        console.log(uniqArrayOfSNPs);
+        console.log(snps);
         console.log(genotypes);
         console.log(parseData);
 
