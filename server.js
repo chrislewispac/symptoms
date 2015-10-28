@@ -69,7 +69,7 @@
          }
 
          parseData = body.results;
-         SNPs = uniqArrayOfSNP.join("%20");
+         SNPs = uniqArrayOfSNPs.join("%20");
          app.set('uniqArrayOfSNPs', uniqArrayOfSNPs)
          app.set('parseData', parseData);
          app.set('SNPs', SNPs);
