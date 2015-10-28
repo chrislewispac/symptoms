@@ -6,8 +6,10 @@ block content
         .ui.segment
           
       .column
-        .ui.segment
-          a.ui.primary.button(href="https://api.23andme.com/authorize/?redirect_uri=#{redirect_uri}&response_type=code&client_id=#{client_id}&scope=#{scope}") Connect to 23andMe
+        .ui.segment.middle.aligned.center.aligned.grid
+          a.ui.primary.button(href="https://api.23andme.com/authorize/?redirect_uri=#{redirect_uri}&response_type=code&client_id=#{client_id}&scope=#{scope}") 
+          img.logo(src="/images/23andMe-logo.png", width="30px", height="30px")
+              | Connect to 23andMe
       .column
         .ui.segment
           
