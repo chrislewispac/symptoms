@@ -39,6 +39,7 @@
  var parseData = {};
  var SNPs = '';
  var getSNPs = function () {
+     console.log('RUNNING PARSE GET FUNCTION');
 
      var ParseHeaders = function () {
          var _headers = {
