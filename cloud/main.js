@@ -13,6 +13,11 @@ Parse.Cloud.define("hello", function (request, response) {
 });
 
 
+Parse.Cloud.afterSave('snps', function (request, response) {
+    console.log('Ran afterSave on objectId: ' + request.object.id);
+});
+
+
 Parse.Cloud.beforeSave('TestObject', function (request, response) {
     console.log('Ran beforeSave on objectId: ' + request.object.id);
     response.success();
