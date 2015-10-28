@@ -18,14 +18,19 @@ block content
             .ui.styled.accordion
               each val in parseData
                 each obj, index in val
-                    if index =='symptom_category'    
+                    if index == 'symptom_category'    
                         .title
                             i.dropdown.icon
                             |  !{obj}
                         .content
-                            p.transition.hidden
-                              | !{val.text_to_display}
-                            a.pubmed Pubmed Link  
+                        
+                            each genotype in genotypes
+                                each kvPair, key in genotype
+                                    if key == '!{val.rs}'
+                                    p.transition.hidden
+                                      | !{kvPair}
+
+                                    a.pubmed Pubmed Link  
                 
     ul
     ul
