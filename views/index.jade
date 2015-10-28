@@ -3,35 +3,8 @@ extends layout
 block content
     .ui.menu
       .item
-        .ui.primary.button Connect to 23andMe
-        #wrapper
-          // TTAM BUTTON
-    .ui.middle.aligned.center.aligned.grid
-      .content
-        form.ui.large.form
-          .ui.stacked.segment
-            .ui.styled.accordion
-              .title
-                i.dropdown.icon
-                |  Stomach Pain
-              .content
-                p.transition.hidden
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi delectus a esse repellat, consequuntur eaque molestias aliquam sed, est, voluptatibus culpa enim expedita veniam ducimus unde beatae suscipit quasi ratione.
-                a.pubmed Pubmed Link
-              .title
-                i.dropdown.icon
-                |  Chest Pain
-              .content
-                p.transition.hidden
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis deserunt vitae minima ipsa asperiores dolore fugit reprehenderit ex voluptatibus libero! Obcaecati labore id laborum voluptas, temporibus, quas accusamus cumque illo.
-                a.pubmed Pubmed Link
-              .title
-                i.dropdown.icon
-                |  Seizures
-              .content
-                p.transition.hidden
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, recusandae? Iste neque nemo mollitia, natus, aliquam voluptatem dignissimos ipsa inventore sequi quasi aperiam, sunt debitis a totam cupiditate corporis asperiores!
-                a.pubmed Pubmed Link
+        .ui.primary.button(href="https://api.23andme.com/authorize/?redirect_uri=#{redirect_uri}&response_type=code&client_id=#{client_id}&scope=#{scope}") Connect to 23andMe
+
 
     h1 Initialized
     p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia impedit nulla nostrum, esse ex alias, odit? Deleniti sint libero ducimus asperiores debitis. Fugit mollitia reprehenderit accusamus laborum, atque dignissimos, quo.
