@@ -28,8 +28,29 @@ block content
                                     if rs == val.rs
                                         if snp == val.snp
                                             p.transition.hidden
-                                                | !{val.text_to_display}
+                                                | #{names[genotype.id]}: !{val.text_to_display}
                                                 a.pubmed Pubmed Link  
                                         else        
                                             p.transition.hidden
-                                                | Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}
+                                                | #{names[genotype.id]}: Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}  
+                
+    ul
+    ul
+      each val in parseData
+        each obj, index in val
+            if index == 'symptom_category'
+                li= index + ': ' + obj            
+                
+                
+                
+                
+                
+    
+    each snp, i in uniqArrayOfSNPs
+        p #{snp}
+    each genotype, key in genotypes
+        p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>
+        p #{key} + ': ' + !{genotype}
+    
+    each data, i in parseData
+        p !{JSON.stringify(parseData)}
