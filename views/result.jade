@@ -25,10 +25,10 @@ block content
                         .content
                         
                             each genotype in genotypes
-                                each kvPair, key in genotype
-                                    if key == '!{val.rs}'
+                                each snp, rs in genotype
+                                    if rs == '!{val.rs}'
                                     p.transition.hidden
-                                      | !{kvPair} !{val.rs}
+                                      | !{snp} !{val.rs}
 
                                     a.pubmed Pubmed Link  
                 
