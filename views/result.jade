@@ -4,14 +4,7 @@ block append head
     script(src='js/results.js')
 
 block content    
-    h1 Your results
-    p #{uniqArrayOfSNPs}
-    each genotype, i in genotypes
-        p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>
-    
-    each data, i in parseData
-        p !{JSON.stringify(parseData)}
-        
+    h1 Your results        
     .ui.middle.aligned.center.aligned.grid
       .content
         form.ui.large.form
@@ -37,4 +30,11 @@ block content
               .content
                 p.transition.hidden
                   | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, recusandae? Iste neque nemo mollitia, natus, aliquam voluptatem dignissimos ipsa inventore sequi quasi aperiam, sunt debitis a totam cupiditate corporis asperiores!
-                a.pubmed Pubmed Link    
+                a.pubmed Pubmed Link   
+                
+    p #{uniqArrayOfSNPs}
+    each genotype, i in genotypes
+        p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>
+    
+    each data, i in parseData
+        p !{JSON.stringify(parseData)}
