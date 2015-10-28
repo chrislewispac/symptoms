@@ -2,10 +2,11 @@ extends layout
 
 block append head
     script(src='js/results.js')
+    
     script.
-        - var values = ['1','2','3'];
-        - var snps = #{uniqArrayOfSNPs};
-        - var genotypes = !{JSON.stringify(genotypes)};
+        var things = ['1','2','3'];
+        var snps = #{uniqArrayOfSNPs};
+        var genotypes = !{JSON.stringify(genotypes)};
 
 block content    
     h1 Your results        
