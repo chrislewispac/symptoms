@@ -27,6 +27,9 @@ block content
                             each genotype in genotypes
                                 each snp, rs in genotype
                                     if rs == val.rs
+                                        if snp == val.snp
+                                            p.transition.hidden
+                                                | Holy cow, its a match!
                                         p.transition.hidden
                                             | !{rs} !{snp} !{val.rs}
 
