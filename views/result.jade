@@ -9,8 +9,7 @@ block append head
         var genotypes = !{JSON.stringify(genotypes)};
         var parseData = !{JSON.stringify(parseData)};
 
-block content    
-    h1 Your results        
+block content          
     .ui.middle.aligned.center.aligned.grid
       .content
         form.ui.large.form
@@ -33,25 +32,4 @@ block content
                                                 a.pubmed Pubmed Link  
                                         else        
                                             p.transition.hidden
-                                                | Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}  
-                
-    ul
-    ul
-      each val in parseData
-        each obj, index in val
-            if index == 'symptom_category'
-                li= index + ': ' + obj            
-                
-                
-                
-                
-                
-    
-    each snp, i in uniqArrayOfSNPs
-        p #{snp}
-    each genotype, key in genotypes
-        p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>
-        p #{key} + ': ' + !{genotype}
-    
-    each data, i in parseData
-        p !{JSON.stringify(parseData)}
+                                                | Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}
