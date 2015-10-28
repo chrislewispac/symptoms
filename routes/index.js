@@ -11,7 +11,7 @@ var process = function () {
     };
 }();
 
-exports.index = function (req, res, scope, SNPs) {
+exports.index = function (req, res, scope, SNPs, parseData) {
 
     if (req.signedCookies.access_token) {
         var names, names_by_id = {},
@@ -41,7 +41,8 @@ exports.index = function (req, res, scope, SNPs) {
                     genotypes = body;
                     res.render('result', {
                         names: names_by_id,
-                        genotypes: genotypes
+                        genotypes: genotypes,
+                        parseData: parseData,
                     });
                 });
             }
@@ -55,7 +56,7 @@ exports.index = function (req, res, scope, SNPs) {
     }
 };
 
-exports.receive_code = function (req, res, scope, SNPs) {
+exports.receive_code = function (req, res, scope, SNPs, parseData) {
     if (!req.query.code) {
         res.render('error', {
             client_id: process.env.CLIENT_ID,

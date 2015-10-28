@@ -31,6 +31,7 @@
  // Mount the webhooks app to a specific path (must match what is used in scripts/register-webhooks.js)
  app.use('/webhooks', ParseCloud.app);
 
+ var parseData = {};
  var SNPs = '';
  var getSNPs = function () {
 
@@ -65,7 +66,9 @@
              }
          }
 
+         parseData = body.results;
          SNPs = uniqArrayOfSNP.join("%20");
+         app.set('parseData', parseData);
          app.set('SNPs', SNPs);
          app.set('scope', SNPs + '%20genomes%20names');
      };
@@ -82,10 +85,10 @@
  }();
 
  app.get('/', function (res, req) {
-     routes.index(res, req, app.get('scope'), app.get('SNPs'));
+     routes.index(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'));
  });
  app.get('/receive_code/', function (res, req) {
-     routes.receive_code(res, req, app.get('scope'), app.get('SNPs'));
+     routes.receive_code(res, req, app.get('scope'), app.get('SNPs'), app.get('parseData'));
  });
 
  //Catch all unknown routes.
