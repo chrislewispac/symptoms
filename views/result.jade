@@ -38,10 +38,10 @@ block content
                 
     
     each snp, i in uniqArrayOfSNPs
-        p p #{snp}
+        p #{snp}
     each genotype, index in genotypes
         p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>
-        li= index + ': ' + val
+        li= index + ': ' + genotype
     
     each data, i in parseData
         p !{JSON.stringify(parseData)}
