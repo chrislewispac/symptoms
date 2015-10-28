@@ -32,7 +32,9 @@ block content
                   | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, recusandae? Iste neque nemo mollitia, natus, aliquam voluptatem dignissimos ipsa inventore sequi quasi aperiam, sunt debitis a totam cupiditate corporis asperiores!
                 a.pubmed Pubmed Link   
                 
-    p #{uniqArrayOfSNPs}
+    
+    each snp, i in uniqArrayOfSNPs
+        p p #{snp}
     each genotype, i in genotypes
         p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>
     
