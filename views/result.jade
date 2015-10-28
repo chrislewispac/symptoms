@@ -28,11 +28,9 @@ block content
                                 each snp, rs in genotype
                                     if rs == val.rs
                                         p.transition.hidden
-                                            | Matched!
-                                    p.transition.hidden
-                                        | !{rs} !{snp} !{val.rs}
-                                        
-                                        a.pubmed Pubmed Link  
+                                            | !{rs} !{snp} !{val.rs}
+
+                                            a.pubmed Pubmed Link  
                 
     ul
     ul
