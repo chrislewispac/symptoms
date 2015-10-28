@@ -38,6 +38,14 @@ block content
                   | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, recusandae? Iste neque nemo mollitia, natus, aliquam voluptatem dignissimos ipsa inventore sequi quasi aperiam, sunt debitis a totam cupiditate corporis asperiores!
                 a.pubmed Pubmed Link   
                 
+    ul
+      each val, index in {"x":'one', "y":'two',"z":'three'}
+        li= index + ': ' + val            
+                
+                
+                
+                
+                
     
     each snp, i in uniqArrayOfSNPs
         p #{snp}
