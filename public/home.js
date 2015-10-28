@@ -27,6 +27,9 @@
 
         //INITIATE ACCORDION MODULE
         $('.ui.accordion').accordion();
+
+
+        console.log(genotype);
     });
 
 })(jQuery)

@@ -1,6 +1,9 @@
 extends layout
 
 block content
+    script(type='text/javascript').
+        var genotype =!{JSON.stringify(genotype)}
+        
     h1 Your results
     each genotype, i in genotypes
         p <b>#{names[genotype.id]}</b> has genotype <b>!{JSON.stringify(genotype)}</b>
