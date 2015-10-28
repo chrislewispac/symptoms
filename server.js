@@ -9,6 +9,8 @@
      request = require('request');
 
  var app = express();
+ app = expose(app);
+
 
  app.configure(function () {
      app.set('views', __dirname + '/views');
