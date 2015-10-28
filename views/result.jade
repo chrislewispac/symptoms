@@ -41,9 +41,9 @@ block content
     ul
     ul
       each val in parseData
-        li= val
         each obj, index in val
-            li= index + ': ' + obj            
+            if index == 'symptom_category'
+                li= index + ': ' + obj            
                 
                 
                 
