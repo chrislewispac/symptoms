@@ -1,7 +1,11 @@
  //Require Node Modules
  var http = require('http'),
      express = require('express'),
+
+
      expose = require('express-expose'),
+
+
      path = require('path'),
      routes = require('./routes'),
      Parse = require('parse/node'),
@@ -69,8 +73,6 @@
          app.set('parseData', parseData);
          app.set('SNPs', SNPs);
          app.set('scope', SNPs + '%20genomes%20names');
-         app.expose(app.settings, 'settings');
-         console.log(app.settings);
      };
 
      request.get({
