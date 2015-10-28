@@ -1,7 +1,6 @@
 var Parse = require('parse-cloud-express').Parse;
 var request = require('request');
 
-
 Parse.Cloud.define("hello", function (request, response) {
     console.log('Ran cloud function.');
     // As with Parse-hosted Cloud Code, the user is available at: request.user
