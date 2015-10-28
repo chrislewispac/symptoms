@@ -16,27 +16,17 @@ block content
         form.ui.large.form
           .ui.stacked.segment
             .ui.styled.accordion
-              .title
-                i.dropdown.icon
-                |  Stomach Pain
-              .content
-                p.transition.hidden
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi delectus a esse repellat, consequuntur eaque molestias aliquam sed, est, voluptatibus culpa enim expedita veniam ducimus unde beatae suscipit quasi ratione.
-                a.pubmed Pubmed Link
-              .title
-                i.dropdown.icon
-                |  Chest Pain
-              .content
-                p.transition.hidden
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis deserunt vitae minima ipsa asperiores dolore fugit reprehenderit ex voluptatibus libero! Obcaecati labore id laborum voluptas, temporibus, quas accusamus cumque illo.
-                a.pubmed Pubmed Link
-              .title
-                i.dropdown.icon
-                |  Seizures
-              .content
-                p.transition.hidden
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, recusandae? Iste neque nemo mollitia, natus, aliquam voluptatem dignissimos ipsa inventore sequi quasi aperiam, sunt debitis a totam cupiditate corporis asperiores!
-                a.pubmed Pubmed Link   
+              each val in parseData
+                each obj, index in val
+                    if index == 'symptom_category'
+                        li= index + ': ' + obj 
+                      .title
+                        i.dropdown.icon
+                        |  #{obj}
+                      .content
+                        p.transition.hidden
+                          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi delectus a esse repellat, consequuntur eaque molestias aliquam sed, est, voluptatibus culpa enim expedita veniam ducimus unde beatae suscipit quasi ratione.
+                        a.pubmed Pubmed Link  
                 
     ul
     ul
