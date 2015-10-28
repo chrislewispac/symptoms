@@ -12,7 +12,8 @@
         "jade": "*",
         "request": "*",
         "parse": "~1.6",
-        "parse-cloud-express": "~1.0"
+        "parse-cloud-express": "~1.0",
+        "express-expose": "0.3.2"
     },
     "engines": {
         "node": "0.12.2"

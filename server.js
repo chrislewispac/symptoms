@@ -1,6 +1,7 @@
  //Require Node Modules
  var http = require('http'),
      express = require('express'),
+     expose = require('express-expose'),
      path = require('path'),
      routes = require('./routes'),
      Parse = require('parse/node'),
