@@ -5,7 +5,7 @@ block append head
     
     script.
         var things = ['1','2','3'];
-        var snps = #{uniqArrayOfSNPs};
+        var snps = !{JSON.stringify(uniqArrayOfSNPs)};
         var genotypes = !{JSON.stringify(genotypes)};
 
 block content    
