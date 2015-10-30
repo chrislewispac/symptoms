@@ -5,7 +5,7 @@
  var SNPs = '';
  var getSNPs = function () {
      console.log('RUNNING PARSE GET FUNCTION');
-     console.log('app is' + JSON.stringinfy(app));
+     console.log('app is' + JSON.stringify(app));
      var ParseHeaders = function () {
          var _headers = {
              'x-parse-rest-api-key': 'gD7j2a8ifsrqiusHIDTiD3j7nMfZ1TTwqwVAHjty',
