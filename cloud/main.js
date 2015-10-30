@@ -1,4 +1,4 @@
-var getSNPs = require('../getSNPs');
+//var getSNPs = require('../getSNPs');
 var Parse = require('parse-cloud-express').Parse;
 
 
