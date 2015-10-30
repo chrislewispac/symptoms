@@ -70,7 +70,7 @@ Parse.Cloud.afterSave('snps', function (request, response) {
             }
         });
     };
-    console.log('Ran afterSave on objectId: ' + request.object.id);
+    console.log('Ran afterSave on objectId: ');
 });
 
 
