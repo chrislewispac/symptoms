@@ -1,3 +1,5 @@
+ var request = require('request');
+
  var parseData = {};
  var SNPs = '';
  var getSNPs = function () {
@@ -50,4 +52,4 @@
      });
  };
 
-module.exports = getSNPs;
+ module.exports = getSNPs;
