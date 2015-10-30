@@ -1,4 +1,6 @@
 var Parse = require('parse-cloud-express').Parse;
+var request = require('request');
+var app = require('../server.js');
 
 
 
@@ -16,9 +18,6 @@ Parse.Cloud.define("hello", function (request, response) {
 
 Parse.Cloud.afterSave('snps', function (request, response) {
     //getSNPs();
-
-    var request = require('request');
-    var app = require('../server.js');
 
     var parseData = {};
     var SNPs = '';
