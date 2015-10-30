@@ -1,7 +1,5 @@
  var request = require('request');
- var app = {
-     thing: "thing"
- };
+ var app = require('../app');
 
  var parseData = {};
  var SNPs = '';
