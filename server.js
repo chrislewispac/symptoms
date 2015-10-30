@@ -114,5 +114,3 @@
  server.listen(port, function () {
      console.log('Cloud Code Webhooks server running on port ' + port + '.');
  });
-
- module.exports = app;
