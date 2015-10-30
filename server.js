@@ -1,6 +1,7 @@
  //Require Node Modules
  var http = require('http'),
      express = require('express'),
+     getSNPs = require('./getSNPs'),
      path = require('path'),
      routes = require('./routes'),
      Parse = require('parse/node'),
@@ -23,8 +24,6 @@
      app.use(app.router);
      app.use(express.static(path.join(__dirname, 'public')));
  });
-
- var getSNPs = require('./getSNPs');
 
  getSNPs();
 
