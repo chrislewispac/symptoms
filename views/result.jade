@@ -17,33 +17,38 @@ block content
             .ui.styled.accordion
               each val in parseData
                 each obj, index in val
-                    if index == 'symptom_category'
-                        each genotype in genotypes
-                            each snp, rs in genotype
-                                if rs == val.rs
-                                    if snp == val.snp
-                                        .title
-                                            i.dropdown.icon
-                                            |  !{obj}
-                                        .content
-                                            p.transition.hidden
-                                                | #{names[genotype.id]}: !{val.text_to_display}
-                                                each id in val.pubmed_ids
-                                                    a.pubmed(href="http://www.ncbi.nlm.nih.gov/pubmed/" + id) Pubmed Link  
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-//                        
+                    if index == 'symptom_category'  
+                        each val in parseData
+                            each obj, index in val
+                                if index == 'symptom_category'
+                                    each genotype in genotypes
+                                        each snp, rs in genotype
+                                            if rs == val.rs
+                                                if snp == val.snp
+                                                    .title
+                                                        i.dropdown.icon
+                                                        |  !{obj}
+                                                    .content
+                                                        p.transition.hidden
+                                                            | #{names[genotype.id]}: !{val.text_to_display}
+                                                            each id in val.pubmed_ids
+                                                                a.pubmed(href="http://www.ncbi.nlm.nih.gov/pubmed/" + id) Pubmed Link  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 //                        .title
 //                            i.dropdown.icon
 //                            |  !{obj}
 //                        .content
-//                        
 //                            each genotype in genotypes
 //                                each snp, rs in genotype
 //                                    if rs == val.rs
