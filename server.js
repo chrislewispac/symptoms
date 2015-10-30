@@ -1,11 +1,6 @@
  //Require Node Modules
  var http = require('http'),
      express = require('express'),
-
-
-     expose = require('express-expose'),
-
-
      path = require('path'),
      routes = require('./routes'),
      Parse = require('parse/node'),
@@ -35,9 +30,9 @@
  // Mount the webhooks app to a specific path (used in scripts/register-webhooks.js)
  app.use('/webhooks', ParseCloud.app);
 
- var getSNPs = require('./getSNPs');
-
- getSNPs();
+// var getSNPs = require('./getSNPs');
+//
+// getSNPs();
 
  //
  // var parseData = {};
