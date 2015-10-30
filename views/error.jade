@@ -1,9 +1,13 @@
 extends layout
 
 block content
-    h1 Oh, no.
-    p You'll never know, if you don't click accept. Perhaps another go?
-    a.button.large.secondary(href="https://api.23andme.com/authorize/?redirect_uri=#{redirect_uri}&response_type=code&client_id=#{client_id}&scope=#{scope}")
-        img.logo(src="/images/23andMe-logo.png", width="30px", height="30px")
-        span I suppose.
+    h1 Oh, no. There was an error.
+    h3 This happens when our database is updated and you need to give us permission to view more SNPs!
+    p. Clear your cookies and try again!
+    .ui.equal.width.grid
+      .column 
+      .column
+        .ui.middle.aligned.center.aligned.grid
+          a.ui.primary.button(href="https://api.23andme.com/authorize/?redirect_uri=#{redirect_uri}&response_type=code&client_id=#{client_id}&scope=#{scope}") Connect to 23andMe
+      .column
 

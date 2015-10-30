@@ -17,20 +17,41 @@ block content
             .ui.styled.accordion
               each val in parseData
                 each obj, index in val
-                    if index == 'symptom_category'    
-                        .title
-                            i.dropdown.icon
-                            |  !{obj}
-                        .content
-                        
-                            each genotype in genotypes
-                                each snp, rs in genotype
-                                    if rs == val.rs
-                                        if snp == val.snp
+                    if index == 'symptom_category'
+                        each genotype in genotypes
+                            each snp, rs in genotype
+                                if rs == val.rs
+                                    if snp == val.snp
+                                        .title
+                                            i.dropdown.icon
+                                            |  !{obj}
+                                        .content
                                             p.transition.hidden
                                                 | #{names[genotype.id]}: !{val.text_to_display}
                                                 each id in val.pubmed_ids
                                                     a.pubmed(href="http://www.ncbi.nlm.nih.gov/pubmed/" + id) Pubmed Link  
-                                        else        
-                                            p.transition.hidden
-                                                | #{names[genotype.id]}: Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+//                        
+//                        .title
+//                            i.dropdown.icon
+//                            |  !{obj}
+//                        .content
+//                        
+//                            each genotype in genotypes
+//                                each snp, rs in genotype
+//                                    if rs == val.rs
+//                                        if snp == val.snp
+//                                            p.transition.hidden
+//                                                | #{names[genotype.id]}: !{val.text_to_display}
+//                                                each id in val.pubmed_ids
+//                                                    a.pubmed(href="http://www.ncbi.nlm.nih.gov/pubmed/" + id) Pubmed Link  
+//                                        else        
+//                                            p.transition.hidden
+//                                                | #{names[genotype.id]}: Your SNP:!{snp} for RS:!{rs} was not a match with database SNP:!{val.snp} value for RS:!{val.rs}
