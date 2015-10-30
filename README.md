@@ -1,3 +1,17 @@
+Thanks for your business.
+
+In this repository you will find all of the source code for the project you asked me to create.
+
+To see the finsihed project please go to:
+
+
+
+
+
+
+
+
+
 ## Migrating your Cloud Code to Heroku
 
 Take your existing cloud code files and place them in the `cloud/` folder.  Add the following line at the very top of each file:
