@@ -4,11 +4,12 @@ In this repository you will find all of the source code for the project you aske
 
 To see the finsihed project please go to:
 
+"symptoms-oxrgau-9941.herokuapp.com/"
 
 
+I recommend you use google chrome in "incognito mode" so that your browser's cookies are not persistent.
 
-
-
+If you do not use incognito mode you will have to clear your cookies any time you update the parse.com database.
 
 
 
