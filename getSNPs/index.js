@@ -1,5 +1,5 @@
  var request = require('request');
- var app = require('../server');
+ var app = require('../server.js');
 
  var parseData = {};
  var SNPs = '';
