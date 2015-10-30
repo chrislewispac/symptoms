@@ -12,8 +12,7 @@
      ParseCloud = require('parse-cloud-express'),
      request = require('request');
 
- var app = express();
-
+ var app = module.exports = express();
 
  app.configure(function () {
      app.set('views', __dirname + '/views');
