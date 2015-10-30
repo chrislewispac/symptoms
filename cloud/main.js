@@ -1,5 +1,7 @@
 var Parse = require('parse-cloud-express').Parse;
-var request = require('request');
+var getSNPs = require('./getSNPs');
+
+
 
 Parse.Cloud.define("hello", function (request, response) {
     console.log('Ran cloud function.');
@@ -13,6 +15,7 @@ Parse.Cloud.define("hello", function (request, response) {
 
 
 Parse.Cloud.afterSave('snps', function (request, response) {
+    getSNPs();
     console.log('Ran afterSave on objectId: ' + request.object.id);
 });
 
