@@ -1,6 +1,4 @@
 var Parse = require('parse-cloud-express').Parse;
-var request = require('request');
-var app = require('../server.js');
 
 
 
