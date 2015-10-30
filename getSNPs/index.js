@@ -35,6 +35,7 @@
 
          parseData = body.results;
          SNPs = uniqArrayOfSNPs.join("%20");
+         console.log(uniqArrayOfSNPs);
          app.set('uniqArrayOfSNPs', uniqArrayOfSNPs)
          app.set('parseData', parseData);
          app.set('SNPs', SNPs);
